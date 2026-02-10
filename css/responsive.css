@@ -1,0 +1,155 @@
+/* css/responsive.css */
+/* Mobile First Responsive Design */
+
+/* Small devices (phones, 576px and up) */
+@media (max-width: 576px) {
+    :root {
+        --container-padding: 1rem;
+    }
+    
+    .hero {
+        padding: var(--space-3xl) 0 var(--space-2xl);
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-lg);
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+    /* Header Mobile Navigation */
+    .nav-toggle {
+        display: block;
+    }
+    
+    .primary-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background-color: var(--color-white);
+        box-shadow: var(--shadow-xl);
+        padding: var(--space-2xl) var(--space-xl);
+        transition: right var(--transition-slow);
+        z-index: 1000;
+        overflow-y: auto;
+    }
+    
+    .primary-nav.is-open {
+        right: 0;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-md);
+    }
+    
+    .nav-link {
+        padding: var(--space-md);
+        border-radius: var(--border-radius);
+        display: block;
+    }
+    
+    .nav-item-contact {
+        margin-left: 0;
+        margin-top: var(--space-md);
+    }
+    
+    .nav-item-contact .btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Overlay when menu is open */
+    body.nav-open::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+    
+    /* Layout adjustments */
+    .content-split {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+    
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+    
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 769px) and (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        padding: 0;
+    }
+}
+
+/* High DPI screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* High-resolution adjustments if needed */
+}
+
+/* Print styles */
+@media print {
+    .site-header,
+    .site-footer,
+    .btn,
+    .nav-toggle {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+    
+    a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.9em;
+        font-weight: normal;
+    }
+}
