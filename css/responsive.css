@@ -11,6 +11,18 @@
         padding: var(--space-3xl) 0 var(--space-2xl);
     }
     
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .fund-details-hero {
+        padding: var(--space-2xl) 0;
+    }
+    
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+    
     .footer-grid {
         grid-template-columns: 1fr;
         gap: var(--space-xl);
@@ -20,6 +32,32 @@
         flex-direction: column;
         text-align: center;
         gap: var(--space-lg);
+    }
+    
+    .company-card {
+        margin-bottom: 20px;
+    }
+    
+    .company-header, .company-body {
+        padding: 20px;
+    }
+    
+    .company-status {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin-bottom: 15px;
+        display: inline-block;
+    }
+    
+    .process-step:before {
+        display: none;
+    }
+    
+    .legend-items {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
     }
 }
 
@@ -36,7 +74,7 @@
         right: -100%;
         width: 280px;
         height: 100vh;
-        background-color: var(--color-white);
+        background-color: white;
         box-shadow: var(--shadow-xl);
         padding: var(--space-2xl) var(--space-xl);
         transition: right var(--transition-slow);
@@ -56,7 +94,6 @@
     
     .nav-link {
         padding: var(--space-md);
-        border-radius: var(--border-radius);
         display: block;
     }
     
@@ -83,18 +120,40 @@
     }
     
     /* Layout adjustments */
-    .content-split {
-        grid-template-columns: 1fr;
-        gap: var(--space-xl);
+    .hero-btns {
+        flex-direction: column;
+        align-items: center;
     }
     
-    .grid-2,
-    .grid-3,
-    .grid-4 {
+    .hero-btns .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .opportunities-grid {
         grid-template-columns: 1fr;
     }
     
-    .card-grid {
+    .company-links {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+    
+    .documents-group {
+        justify-content: center;
+    }
+    
+    .process-timeline {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .fund-highlights {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .quick-facts {
         grid-template-columns: 1fr;
     }
 }
@@ -108,6 +167,10 @@
     .grid-3,
     .grid-4 {
         grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .opportunities-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
 }
 
@@ -135,6 +198,8 @@
     body {
         font-size: 12pt;
         line-height: 1.4;
+        background: white;
+        color: black;
     }
     
     .container {
@@ -151,5 +216,15 @@
         content: " (" attr(href) ")";
         font-size: 0.9em;
         font-weight: normal;
+    }
+    
+    .company-card,
+    .fund-card,
+    .team-card,
+    .contact-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
     }
 }
