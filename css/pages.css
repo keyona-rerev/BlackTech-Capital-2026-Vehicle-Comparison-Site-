@@ -1,0 +1,75 @@
+/* css/pages.css */
+/* Page-specific styles that don't fit in components */
+
+/* Home page specific */
+.page-home .hero {
+    padding: 140px 0 100px;
+}
+
+.page-home .comparison-container {
+    margin-top: 60px;
+}
+
+/* Catalyst Fund page specific */
+.page-catalyst-fund .fund-details-hero {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-green) 100%);
+}
+
+.page-catalyst-fund .toggle-section {
+    margin-bottom: 30px;
+}
+
+.page-catalyst-fund .team-section {
+    padding-bottom: 60px;
+}
+
+/* Fund I page specific */
+.page-fund-i .fund-details-hero {
+    background: linear-gradient(135deg, var(--neutral-tan) 0%, var(--secondary-green) 100%);
+}
+
+.page-fund-i table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.page-fund-i table th {
+    padding: 15px;
+    text-align: left;
+    background-color: var(--primary-blue);
+    color: white;
+    font-weight: 600;
+}
+
+.page-fund-i table td {
+    padding: 15px;
+    border-bottom: 1px solid var(--medium-gray);
+}
+
+.page-fund-i table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.page-fund-i table td strong {
+    color: var(--primary-blue);
+}
+
+/* Opportunities page specific */
+.page-opportunities .fund-details-hero {
+    background: linear-gradient(135deg, var(--secondary-green) 0%, var(--primary-blue) 100%);
+}
+
+.page-opportunities .company-card {
+    margin-bottom: 30px;
+}
+
+.page-opportunities .process-step:before {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .page-opportunities .process-step:before {
+        display: none;
+    }
+}
